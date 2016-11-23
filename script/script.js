@@ -237,7 +237,8 @@ function change_cha(){
 	setTimeout(function(){
 		stop_walk();
 		$boy.removeClass('walk_slow_flower').removeClass('walk_in2').removeClass('walk_in3');
-	    $boy.addClass('boy_flower_last')
+	    $boy.addClass('boy_flower_last');
+	    $girl.addClass('girl_last');
 	    dfd.resolve();
 	},3400);
 	return dfd;
@@ -291,6 +292,8 @@ function creat_flower(){
 					'left':getLeft+'%',
 				    'background': 'url('+getPic+') no-repeat',
 				    'background-size': '100% 100%',
+				    '-webkit-animation':''+getSpeed+'s snow_flower_rotate infinite',
+				    '-moz-animation':''+getSpeed+'s snow_flower_rotate infinite',
 				    'animation':''+getSpeed+'s snow_flower_rotate infinite'
 		}).animate({
 			'top' :'100%',

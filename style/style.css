@@ -136,14 +136,17 @@ ul{
 	top:15%;
 	left:100%;
 	background: url(../images/bird.png);
-
     background-size: 300% 100%;
-
+    animation:500ms bird_fly infinite steps(1,start);
 	-webkit-animation:500ms bird_fly infinite steps(1,start);
 	-moz-animation:500ms bird_fly infinite steps(1,start);
 	
 }
-
+@keyFrames bird_fly{
+	0% { background-position: 0   0 ;}
+	50% { background-position: -100%  0 ;} 
+	100% { background-position: -200%  0 ; }
+}
 
 @-webkit-keyFrames bird_fly{
 	0% { background-position: 0   0 ;}
@@ -188,9 +191,17 @@ ul{
 	top: 88%;
 	left: 34%;
 	background:url(../images/waves.png) no-repeat 0 0;
+	animation:16s wave1_run infinite linear;
 	-webkit-animation:16s wave1_run infinite linear;
 	-moz-animation:16s wave1_run infinite linear;
 
+}
+@keyFrames wave1_run{
+    0%    {left: 34%;}
+	25%   {left: 45%;}
+	50%   {left: 50%;}
+	75%   {left: 45%;}
+	100%  {left: 34%;}
 }
 @-webkit-keyFrames wave1_run{
     0%    {left: 34%;}
@@ -213,8 +224,18 @@ ul{
 	top:79%;
 	left: 44%;
 	background:url(../images/waves.png) no-repeat -260px 0;
+	animation:12s wave2_run infinite linear;
 	-webkit-animation:12s wave2_run infinite linear;
     -moz-animation:12s wave2_run infinite linear;
+}
+@keyFrames wave2_run{
+	 0%    {left: 44%;}
+	18%    {left: 47%;}
+	38%    {left: 50%;}
+	53%   {left: 47%;}
+	68%   {left: 44%;}
+	83%   {left: 41%;}
+	100%  {left: 44%;}
 }
 @-webkit-keyFrames wave2_run{
 	 0%    {left: 44%;}
@@ -241,9 +262,19 @@ ul{
 	top: 93%;
 	left: 43%;
 	background:url(../images/waves.png) no-repeat -392px 0;
+	animation:19s wave3_run infinite linear;
 	-webkit-animation:19s wave3_run infinite linear;
 	-moz-animation:19s wave3_run infinite linear;
 
+}
+@keyFrames wave3_run{
+    0%    {left: 43%;}
+    16%    {left: 37%;}
+    34%    {left: 32%;}
+    50%    {left: 37%;}
+	66%   {left: 43%;}
+	83%   {left: 48%;}
+	100%   {left: 43%;}
 }
 @-webkit-keyFrames wave3_run{
     0%    {left: 43%;}
@@ -270,10 +301,22 @@ ul{
 	top: 82%;
 	left: 48%;
 	background:url(../images/waves.png) no-repeat -694px 0;
+	animation:15s wave4_run infinite linear;
 	-webkit-animation:15s wave4_run infinite linear;
 	-moz-animation:15s wave4_run infinite linear;
 }
-
+@keyFrames wave4_run{
+    0%      {left: 48%;}
+    12.5%   {left: 44%;}
+    25%     {left: 40%;}
+	37.5%   {left: 36%;}
+	50%     {left: 40%;}
+    62.5%   {left: 44%;}
+	75%     {left: 48%;}
+	87.5%   {left: 52%;}
+	100%    {left: 48%;}
+	
+}
 @-webkit-keyFrames wave4_run{
     0%      {left: 48%;}
     12.5%   {left: 44%;}
@@ -308,9 +351,17 @@ ul{
 	left: 25%;
 	background: url(../images/stars.png) no-repeat;
 	background-size: 100% 100%;
+	animation:1s star1_shine infinite ease;
 	-webkit-animation:1s star1_shine infinite ease;
 	-moz-animation:1s star1_shine infinite ease;
 
+}
+@keyFrames star1_shine {
+	0%    {opacity: 1  ;}
+	25%   {opacity: 0.5;}
+	50%   {opacity: 0  ;}
+	75%   {opacity: 0.5;}
+	100%  {opacity: 1  ;}
 }
 @-webkit-keyFrames star1_shine {
 	0%    {opacity: 1  ;}
@@ -334,9 +385,17 @@ ul{
 	left: 83%;
 	background: url(../images/stars.png) no-repeat;
 	background-size: 100% 100%;
+	animation:1.2s star2_shine infinite ease;
 	-webkit-animation:1.2s star2_shine infinite ease;
 	-moz-animation:1.2s star2_shine infinite ease;
 
+}
+@keyFrames star2_shine {
+	0%   {opacity: 1  ;}
+	25%  {opacity: 0.5;}
+	50%  {opacity: 0  ;}
+	75%  {opacity: 0.5;}
+	100% {opacity: 1  ;}
 }
 @-webkit-keyFrames star2_shine {
 	0%   {opacity: 1  ;}
@@ -360,9 +419,17 @@ ul{
 	left: 30%;
 	background: url(../images/stars.png) no-repeat;
 	background-size: 100% 100%;
+	animation:2s star3_shine infinite ease;
 	-webkit-animation:2s star3_shine infinite ease;
 	-moz-animation:2s star3_shine infinite ease;
 
+}
+@keyFrames star3_shine {
+	0%   {opacity: 1  ;}
+	25%  {opacity: 0.5;}
+	50%  {opacity: 0  ;}
+	75%  {opacity: 0.5;}
+	100% {opacity: 1  ;}
 }
 @-webkit-keyFrames star3_shine {
 	0%   {opacity: 1  ;}
@@ -386,9 +453,17 @@ ul{
 	left: 20%;
 	background: url(../images/stars.png) no-repeat;
 	background-size: 100% 100%;
+	animation:2.2s star4_shine infinite ease;
 	-webkit-animation:2.2s star4_shine infinite ease;
 	-moz-animation:2.2s star4_shine infinite ease;
 
+}
+@keyFrames star4_shine {
+	0%   {opacity: 1  ;}
+	25%  {opacity: 0.5;}
+	50%  {opacity: 0  ;}
+	75%  {opacity: 0.5;}
+	100% {opacity: 1  ;}
 }
 @-webkit-keyFrames star4_shine {
 	0%   {opacity: 1  ;}
@@ -412,9 +487,17 @@ ul{
 	left: 70%;
 	background: url(../images/stars.png) no-repeat;
 	background-size: 100% 100%;
+	animation:1.6s star5_shine infinite ease;
 	-webkit-animation:1.6s star5_shine infinite ease;
 	-moz-animation:1.6s star5_shine infinite ease;
 
+}
+@keyFrames star5_shine {
+	0%   {opacity: 1  ;}
+	25%  {opacity: 0.5;}
+	50%  {opacity: 0  ;}
+	75%  {opacity: 0.5;}
+	100% {opacity: 1  ;}
 }
 @-webkit-keyFrames star5_shine {
 	0%   {opacity: 1  ;}
@@ -439,9 +522,17 @@ ul{
 	left: 18%;
 	background: url(../images/stars.png) no-repeat;
 	background-size: 100% 100%;
+	animation:1.8s star6_shine infinite ease;
 	-webkit-animation:1.8s star6_shine infinite ease;
 	-moz-animation:1.8s star6_shine infinite ease;
 
+}
+@keyFrames star6_shine {
+	0%   {opacity: 1  ;}
+	25%  {opacity: 0.5;}
+	50%  {opacity: 0  ;}
+	75%  {opacity: 0.5;}
+	100% {opacity: 1  ;}
 }
 @-webkit-keyFrames star6_shine {
 	0%   {opacity: 1  ;}
@@ -465,9 +556,17 @@ ul{
 	left: 10%;
 	background: url(../images/stars.png) no-repeat;
 	background-size: 100% 100%;
+	animation:1.4s star7_shine infinite ease;
 	-webkit-animation:1.4s star7_shine infinite ease;
 	-moz-animation:1.4s star7_shine infinite ease;
 
+}
+@keyFrames star7_shine {
+	0%   {opacity: 1  ;}
+	25%  {opacity: 0.5;}
+	50%  {opacity: 0  ;}
+	75%  {opacity: 0.5;}
+	100% {opacity: 1  ;}
 }
 @-webkit-keyFrames star7_shine {
 	0%   {opacity: 1  ;}
@@ -491,9 +590,17 @@ ul{
 	left: 77%;
 	background: url(../images/stars.png) no-repeat;
 	background-size: 100% 100%;
+	animation:1.9s star8_shine infinite ease;
 	-webkit-animation:1.9s star8_shine infinite ease;
 	-moz-animation:1.9s star8_shine infinite ease;
 
+}
+@keyFrames star8_shine {
+	0%   {opacity: 1  ;}
+	25%  {opacity: 0.5;}
+	50%  {opacity: 0  ;}
+	75%  {opacity: 0.5;}
+	100% {opacity: 1  ;}
 }
 @-webkit-keyFrames star8_shine {
 	0%   {opacity: 1  ;}
@@ -521,10 +628,28 @@ ul{
     background-size: 100% 100%;
 }
 .slogen_show {
+	animation: 1.5s slogen_show linear forwards;
     -webkit-animation: 1.5s slogen_show linear forwards;
     -moz-animation: 1.5s slogen_show linear forwards;
 }
+@keyFrames slogen_show{
+   
 
+    0%   {left: 90%  ;}
+	8%   {left: 80%  ;}
+	16%  {left: 70%  ;}
+	24%  {left: 60%  ;}
+	32%  {left: 50%  ;}
+    36%  {left: 46%  ;}
+	46%  {left: 40%  ;}
+	56%  {left: 47%  ;}
+	66%  {left: 42%  ;}
+	76%  {left: 46%  ;}
+	86%  {left: 43%  ;}
+	92%  {left: 45%  ;}
+	100% {left: 43.5%;}
+
+}
 @-webkit-keyFrames slogen_show{
    
 
@@ -570,7 +695,10 @@ ul{
     width: 100%;
     height: 100%;
 }
-
+@keyFrames snow_flower_rotate{
+    0% { transform:rotate(0deg);}
+    100% { transform:rotate(1080deg);}
+}
 @-webkit-keyFrames snow_flower_rotate{
     0% { transform:rotate(0deg);}
     100% { transform:rotate(1080deg);}
@@ -587,7 +715,7 @@ ul{
 
 
 .boy{
-	z-index: 11;
+	z-index: 8;
 	position: absolute;
 	top:48%;
 	left:0;
@@ -623,19 +751,31 @@ ul{
 	background: url(../images/boy.png) -500% -100%; 
 	background-size: 700% 200%;
 }
-
+.girl_last{
+	background: url(../images/girl.png) -100% 0;
+    background-size: 600% 100%;
+}
 
 
 
 
 
 .walk_slow{
+	animation:1s person_walk infinite steps(1,start);
     -webkit-animation:1s person_walk infinite steps(1,start);
    -moz-animation:1s person_walk infinite steps(1,start);
 
 
 }
+@keyFrames person_walk{
 
+ 0% {background-position:  0   0; }
+ 25% {background-position: -100% 0 ; }
+ 50% {background-position: -200% 0 ; }
+ 75% {background-position: -300% 0 ; }
+ 100% {background-position: 0 0  ; }
+
+}
 @-webkit-keyFrames person_walk{
 
  0% {background-position:  0   0; }
@@ -657,11 +797,20 @@ ul{
 }
 
 .walk_slow_flower{
+	animation:1s person_walk_flower infinite steps(1,start);
     -webkit-animation:1s person_walk_flower infinite steps(1,start);
     -moz-animation:1s person_walk_flower infinite steps(1,start);
 
 }
+@keyFrames person_walk_flower{
 
+ 0% {background-position:      0  -100%; }
+ 25% {background-position: -100%  -100%; }
+ 50% {background-position: -200%  -100%; }
+ 75% {background-position: -300%  -100%; }
+ 100% {background-position:    0  -100%; }
+
+}
 @-webkit-keyFrames person_walk_flower{
 
  0% {background-position:      0  -100%; }
@@ -682,6 +831,7 @@ ul{
 }
 
 .stop_walk{
+	animation-play-state:paused;
 	-webkit-animation-play-state:paused;
 	-moz-animation-play-state:paused;
 }
@@ -689,24 +839,40 @@ ul{
 .walk_in1{
 	opacity: 0;
 	transform:scale(0.4,0.4);
+	-webkit-transform:scale(0.4,0.4);
+	-moz-transform:scale(0.4,0.4);
 }
 
 .walk_in3{
 	opacity: 1;
 	transform:scale(1,1);
+	-webkit-transform:scale(1,1);
+	-moz-transform:scale(1,1);
 }
 
 .walk_in2{
 	transition:1.8s linear;
+	-webkit-transition:1.8s linear;
+	-moz-transition:1.8s linear;
 }
 
 
 
 .boy_turn_around{
+	animation:900ms boy_turn_around  steps(1,start) forwards;
 	-webkit-animation:900ms boy_turn_around  steps(1,start) forwards;
 	-moz-animation:900ms boy_turn_around  steps(1,start) forwards;
 }
+@keyFrames boy_turn_around{
 
+ 0% {background-position: -500%  -100%; }
+ 25% {background-position: -600% -100% ; }
+ 50% {background-position: -600%   0 ; }
+ 75% {background-position: -500%  0 ; }
+ 100% {background-position: -400%  0; }
+
+
+}
 @-webkit-keyFrames boy_turn_around{
 
  0% {background-position: -500%  -100%; }
@@ -731,24 +897,30 @@ ul{
 
 
 .girl_turn_around{
+	animation:900ms girl_turn_around  steps(1,start) forwards ;
 	-webkit-animation:900ms girl_turn_around  steps(1,start) forwards ;
 	-moz-animation:900ms girl_turn_around  steps(1,start) forwards;
   	
 }
+@keyFrames girl_turn_around{
+ 0% {background-position: -100% 0; }
+ 25% {background-position: -200% 0; }
+ 50% {background-position: -300% 0; }
+ 75% {background-position: -400% 0; }
+ 100% {background-position: -500% 0;}
+}
 @-webkit-keyFrames girl_turn_around{
- 0% {background-position: 0 0; }
- 20% {background-position: -100% 0; }
- 40% {background-position: -200% 0; }
- 60% {background-position: -300% 0; }
- 80% {background-position: -400% 0; }
+ 0% {background-position: -100% 0; }
+ 25% {background-position: -200% 0; }
+ 50% {background-position: -300% 0; }
+ 75% {background-position: -400% 0; }
  100% {background-position: -500% 0;}
 }
 @-moz-keyFrames girl_turn_around{
 
- 0% {background-position: 0 0; }
- 20% {background-position: -100% 0; }
- 40% {background-position: -200% 0; }
- 60% {background-position: -300% 0; }
- 80% {background-position: -400% 0; }
+ 0% {background-position: -100% 0; }
+ 25% {background-position: -200% 0; }
+ 50% {background-position: -300% 0; }
+ 75% {background-position: -400% 0; }
  100% {background-position: -500% 0;}
 }
