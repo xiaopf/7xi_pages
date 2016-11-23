@@ -43,10 +43,7 @@ var door_right=$('.page2 .door_right');
 
 
 
-$('#music1').get(0).volume=0.5;
-$('#music2').get(0).volume=0.5;
-$('#music1').get(0).play();
-$('#music2').get(0).pause();
+
 
 
 var k1=$page2.width()/1920;
@@ -75,15 +72,22 @@ $page3.css({
 	'left':cWidth*2
 });
 
-$boy.addClass('walk_slow');
 
 
 
 
 
+function init_music(){
+	$('#music1').get(0).volume=0.5;
+	$('#music2').get(0).volume=0.5;
+	$('#music1').get(0).play();
+	$('#music2').get(0).pause();
+}
 
 
-
+function boy_move(){
+	$boy.addClass('walk_slow');
+}
 
 
 // 太阳和云朵运动函数
@@ -310,12 +314,14 @@ function creat_flower(){
 // });
 
 
+//动画载入延时1s 执行 给预加载留出时间
+setTimeout(start,1000);
 
 
+function start(){
 
-
-
-
+    init_music();
+	boy_move(); 
     bg_sun_cloud();
 
 	walk(4500,0.6).then(function(){
@@ -348,7 +354,7 @@ function creat_flower(){
     })
 
 
-
+}
    
 
 
