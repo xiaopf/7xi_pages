@@ -278,7 +278,7 @@ function creat_flower(){
 	setInterval(function(){
 	    var getPic=arr_flower[Math.floor(Math.random()*6 )];
 	    var getSpeed=arr_ratateSpeed[Math.floor(Math.random()*12)]
-		var getLeft= Math.floor(Math.random()*140-30 );
+		var getLeft=Math.floor(Math.random()*140-30 );
 		var getLeftOffset= Math.floor(Math.random()*20+10 );
 		var getOpa=Math.floor(Math.random()*60+40)/100;
 		var getOpa=Math.floor(Math.random()*60+40)/100;
