@@ -120,7 +120,7 @@ function walk(speed,pos){
 	},speed,'linear',function(){
 		dfd.resolve();
 	});
-	return dfd;
+	return dfd.promise();
 }
 
 //页面整体滑动 
@@ -157,7 +157,6 @@ function bird_fly(){
 	},20000,'linear')
 }
 
-// 男孩走进商店
 function walk_in(){
 	var dfd=$.Deferred();
 	// 男孩向里走，透明度和大小的变化
@@ -165,11 +164,30 @@ function walk_in(){
     // 男孩的坐标变化
 	$boy.animate({
        'left':cWidth+door.position().left+door.width()/2-$boy.width()/2, 
-	},100,'linear',function(){
+	},100,'linear')
+
+
+	setTimeout(function(){
 		dfd.resolve();
-	});
-	return dfd;
+	},1800);
+	return dfd.promise();
+
 }
+
+
+// 男孩从商店走出
+function walk_out(){
+    var dfd=$.Deferred();
+
+    $boy.removeClass('walk_slow').removeClass('walk_in1');
+    $boy.addClass('boy_flower').addClass('walk_slow_flower').addClass('walk_in3');
+
+    setTimeout(function(){ 	
+      	dfd.resolve();  
+    },1800);
+    return dfd.promise();
+}
+
 
 // 男孩腿停止走动
 function stop_walk(){
@@ -189,33 +207,23 @@ function light_dark(){
 	$page2.removeClass('page2_bright');
 }
 
-// 男孩从商店走出
-function walk_out(){
-    var dfd=$.Deferred();
-    setTimeout(function(){
-    	$boy.removeClass('walk_slow').removeClass('walk_in1');
-      	$boy.addClass('boy_flower').addClass('walk_slow_flower').addClass('walk_in3');
-      	dfd.resolve();  
-    },2400);
-    return dfd;
-}
+
 
 // 商店延迟2s后关门
 function close_door(){
 	var dfd=$.Deferred();
-    setTimeout(function(){
-		door_left.animate({
+
+    door_left.animate({
 			'left':'0%'
-		},500,'linear',function(){
-	         dfd.resolve();
-		});
-	    door_right.animate({
+		},500,'linear');
+	door_right.animate({
 			'left':'50%'
-		},500,'linear',function(){
-	         dfd.resolve();
-		});		
-	},1400);	 
-	return dfd;
+		},500,'linear');
+
+    setTimeout(function(){
+	    dfd.resolve();	
+	},1200);	 
+	return dfd.promise();
 }
 
 
@@ -239,13 +247,17 @@ function change_cha(){
 		$boy.removeClass('walk_slow_flower').removeClass('walk_in2').removeClass('walk_in3');
 	    $boy.addClass('boy_flower_last');
 	    $girl.addClass('girl_last');
-	    dfd.resolve();
+	    
 	},3400);
-	return dfd;
+
+	setTimeout(function(){
+	    dfd.resolve();	
+	},3500);	 
+	return dfd.promise();
 }
 
 
-function turn_around(speed){
+function turn_around(){
 	var dfd=$.Deferred();
 
 	setTimeout(function(){
@@ -254,13 +266,14 @@ function turn_around(speed){
 		$boy.animate({
 		    'left':2*cWidth+girlLeft-$boy.width()*0.788,
 		    'top':$girl.offset().top-(boyHeight-0.991*girlHeight)  
-		},speed,'linear',function(){
-			dfd.resolve();
-		});
+		},50,'linear');
 	},1200);
+    
+    setTimeout(function(){
+	    dfd.resolve();	
+	},1300);
 
-
-	return dfd;
+	return dfd.promise();
 }
 
 
@@ -289,7 +302,7 @@ function creat_flower(){
 				    'height': '4.1%',
 					'position': 'absolute',
 					'top':0,	
-					'left':getLeft+'%',
+					'left':getLeft+'%' ,
 				    'background': 'url('+getPic+') no-repeat',
 				    'background-size': '100% 100%',
 				    '-webkit-animation':''+getSpeed+'s snow_flower_rotate infinite',
@@ -306,6 +319,9 @@ function creat_flower(){
 	},40);
 	return dfd;
 }
+
+// 
+
 
 
 
@@ -327,7 +343,7 @@ function start(){
 	boy_move(); 
     bg_sun_cloud();
 
-	walk(4500,0.6).then(function(){
+	$.when(walk(4500,0.6)).then(function(){
 		walk(7100,1.5);
 		return scroll(7100,cWidth);
 	}).then(function(){
@@ -339,9 +355,9 @@ function start(){
 		re_walk();
 		return walk_in()      //动画有时间，但是添加属性一下就搞定了
 	}).then(function(){
-		return walk_out();    //3s 延时，等待walk—in动画展示及取花等待时间
+		return walk_out();    
 	}).then(function(){
-		return close_door();  //2s 延时 等待walk—out 动画展示
+		return close_door();  
 	}).then(function(){
 		light_dark();
 		walk(5100,2.2);
