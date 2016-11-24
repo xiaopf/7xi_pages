@@ -96,19 +96,13 @@ function bg_sun_cloud(){
 	$sun.animate({
 	    'left':-$sun.width(),
 	    'top':$sun.height()*1.2
-	},5000,'linear',function(){
-		dfd.resolve();
-	});
+	},5000,'linear');
 	$cloud1.animate({
 	    'left':'100%'
-	},12000,'linear',function(){
-		dfd.resolve();
-	});
+	},12000,'linear');
     $cloud2.animate({
 	    'left':'0%'
-	},12000,'linear',function(){
-		dfd.resolve();
-	});
+	},12000,'linear');
 }
 
 // 男孩开始走路，速度是时间控制，pos 是到达位置
@@ -147,7 +141,7 @@ function open_door(){
 	},500,'linear',function(){
          dfd.resolve();
 	});
-	return dfd;
+	return dfd.promise();
 }
 
 // 天空中的飞鸟
@@ -236,7 +230,7 @@ function walk_up(speed){
 	},speed,'linear',function(){
 		dfd.resolve();
 	});
-	return dfd;
+	return dfd.promise();
 }
 
 
@@ -317,7 +311,7 @@ function creat_flower(){
         $snow_flower.append(newFlower);
         dfd.resolve();
 	},40);
-	return dfd;
+	return dfd.promise();
 }
 
 // 
