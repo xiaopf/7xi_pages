@@ -22,6 +22,8 @@ ul{
 	height: 100%;
 }
 
+
+
 .page1{
 
 	width:100%;
@@ -31,7 +33,7 @@ ul{
 .a_background_top{
 	width: 100%;
     height:  71.6%;
-	background: url(../images/background/a_background_top.png) no-repeat;
+	background: url(../images/background/a_background_top_00.png) no-repeat;
 	background-size: 100% 100%;
 }
 .sun{
@@ -81,7 +83,7 @@ ul{
 	height: 100%;
 	position:absolute;
 	top:0;	
-	background: url(../images/QixiB-dark.png) no-repeat;
+	background: url(../images/QixiB-dark_00.png) no-repeat;
 	background-size: 100% 100%;
 }
 .page2_bright{
@@ -89,7 +91,7 @@ ul{
 	height: 100%;
 	position:absolute;
 	top:0;	
-	background: url(../images/QixiB-bright.png) no-repeat;
+	background: url(../images/QixiB-bright_00.png) no-repeat;
 	background-size: 100% 100%;
 }
 .pre_load{
@@ -97,7 +99,7 @@ ul{
 	height: 100%;
 	position:absolute;
 	top:-100%;
-	background: url(../images/QixiB-bright.png) no-repeat;
+	background: url(../images/QixiB-bright_00.png) no-repeat;
 	background-size: 100% 100%; 
 }
 
@@ -619,13 +621,16 @@ ul{
 
 .slogen{
 	z-index: 4;
-	width: 12%;
-    height: 11%;
+	width: 16%;
+    height: auto;
 	position: absolute;
 	top:2.5%;
-	left:100%;
-    background: url(../images/slogen.png) no-repeat;
-    background-size: 100% 100%;
+	left:42%;
+    font-size: 62px;
+    color:#fff;
+    font-weight: bold;
+    text-align: center;
+
 }
 .slogen_show {
 	animation: 1.5s slogen_show linear forwards;
@@ -641,13 +646,13 @@ ul{
 	24%  {left: 60%  ;}
 	32%  {left: 50%  ;}
     36%  {left: 46%  ;}
-	46%  {left: 40%  ;}
-	56%  {left: 47%  ;}
-	66%  {left: 42%  ;}
-	76%  {left: 46%  ;}
-	86%  {left: 43%  ;}
-	92%  {left: 45%  ;}
-	100% {left: 43.5%;}
+	46%  {left: 38%  ;}
+	56%  {left: 46%  ;}
+	66%  {left: 40%  ;}
+	76%  {left: 44%  ;}
+	86%  {left: 41%  ;}
+	92%  {left: 43%  ;}
+	100% {left: 42%  ;}
 
 }
 @-webkit-keyFrames slogen_show{
@@ -721,7 +726,7 @@ ul{
 	left:0;
     width: 7.8%;
     height: 29.6%;
-    background: url(../images/boy.png);
+    background: url(../images/boy_00.png);
     background-size: 700% 200%;
     
 }
@@ -744,11 +749,11 @@ ul{
 	top:48%;
     width: 7.8%;
     height: 29.6%;
-    background: url(../images/boy.png) 0 -100%; 
+    background: url(../images/boy_00.png) 0 -100%; 
     background-size: 700% 200%;  
 }
 .boy_flower_last{
-	background: url(../images/boy.png) -500% -100%; 
+	background: url(../images/boy_00.png) -500% -100%; 
 	background-size: 700% 200%;
 }
 .girl_last{
@@ -843,6 +848,12 @@ ul{
 	-moz-transform:scale(0.4,0.4);
 }
 
+.walk_in2{
+	transition:1.8s linear;
+	-webkit-transition:1.8s linear;
+	-moz-transition:1.8s linear;
+}
+
 .walk_in3{
 	opacity: 1;
 	transform:scale(1,1);
@@ -850,11 +861,7 @@ ul{
 	-moz-transform:scale(1,1);
 }
 
-.walk_in2{
-	transition:1.8s linear;
-	-webkit-transition:1.8s linear;
-	-moz-transition:1.8s linear;
-}
+
 
 
 
