@@ -1,13 +1,50 @@
+var img_arr = 	[   "https://xiaopf.github.io/7xi_pages/images/background/a_background_bottom.png",
+					"https://xiaopf.github.io/7xi_pages/images/background/a_background_middle.png",
+					"https://xiaopf.github.io/7xi_pages/images/background/a_background_top_00.png",
+					"https://xiaopf.github.io/7xi_pages/images/background/c_background_bottom.png",
+					"https://xiaopf.github.io/7xi_pages/images/background/c_background_middle.png",
+					"https://xiaopf.github.io/7xi_pages/images/background/c_background_top.png",
+					"https://xiaopf.github.io/7xi_pages/images/QixiB-bright_00.png",
+					"https://xiaopf.github.io/7xi_pages/images/QixiB-dark_00.png",
+					"https://xiaopf.github.io/7xi_pages/images/bird.png",
+					"https://xiaopf.github.io/7xi_pages/images/boy_00.png",
+					"https://xiaopf.github.io/7xi_pages/images/cloud1.png",
+					"https://xiaopf.github.io/7xi_pages/images/cloud2.png",
+					"https://xiaopf.github.io/7xi_pages/images/door-left.png",
+					"https://xiaopf.github.io/7xi_pages/images/door-right.png",
+					"https://xiaopf.github.io/7xi_pages/images/girl.png",
+					"https://xiaopf.github.io/7xi_pages/images/slogen.png",
+					"https://xiaopf.github.io/7xi_pages/images/stars.png",
+					"https://xiaopf.github.io/7xi_pages/images/sun.png",
+					"https://xiaopf.github.io/7xi_pages/images/waves.png"
+				]
 
 
 
 
 
-var img = new Image();
-img.src="https://xiaopf.github.io/7xi_pages/images/background/c_background_top.png";
-img.onload=function(){
-    $('.progress').hide();
+let img_len = img_arr.length;
+var num = img_len;
+
+
+for(let i = 0; i <= img_len; i++){
+	let img = new Image();
+	img.src = img_arr[i];
+
+	img.onload=function(){
+		num --;
+
+		if(num <= 0){
+		    $('.progress').hide();
+		    setTimeout(start,1000);
+		}
+	}
+
 }
+
+
+
+
 
 
 
@@ -342,7 +379,7 @@ function creat_flower(){
 
 
 // 动画载入延时1s 执行 给预加载留出时间
-// setTimeout(start,1000);
+
 
 
 
