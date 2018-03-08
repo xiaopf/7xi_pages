@@ -21,39 +21,28 @@ var img_arr = 	[   "https://xiaopf.github.io/7xi_pages/images/background/a_backg
 
 
 
-
-
-let img_len = img_arr.length;
-var num = img_len;
-
-
-for(let i = 0; i <= img_len; i++){
-	let img = new Image();
-	img.src = img_arr[i];
-
-	img.onload=function(){
-		num --;
-
-		if(num <= 0){
-		    $('.progress').hide();
-		    setTimeout(start,1000);
-		}
-	}
-
-}
-
-
-
-
-
-
-
-
-
-
 $(function(){
 
 
+
+	let img_len = img_arr.length;
+	var num = img_len;
+
+
+	for(let i = 0; i <= img_len; i++){
+		let img = new Image();
+		img.src = img_arr[i];
+
+		img.onload=function(){
+			num --;
+
+			if(num <= 3){
+			    $('.progress').hide();
+			    setTimeout(start,1000);
+			}
+		}
+
+	}
 
 
 
@@ -382,6 +371,7 @@ function creat_flower(){
 
 
 
+// setTimeout(start,1000);
 
   
 
