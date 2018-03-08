@@ -1,9 +1,37 @@
+
+
+
+
+
+var img = new Image();
+img.src="https://xiaopf.github.io/7xi_pages/images/background/c_background_top.png";
+img.onload=function(){
+    $('.progress').hide();
+}
+
+
+
+
+
+
 $(function(){
+
+
+
 
 
 var $content=$('#content');
 var cWidth=$content.width();
 var cHeight=$content.height();
+
+
+
+document.documentElement.style.fontSize = 20*(cWidth/320) + 'px';
+
+
+
+
+
 $('ul').width(3*cWidth);
 $('ul li').width(cWidth).height(cHeight);
 
@@ -314,7 +342,7 @@ function creat_flower(){
 
 
 // 动画载入延时1s 执行 给预加载留出时间
-setTimeout(start,1000);
+// setTimeout(start,1000);
 
 
 
